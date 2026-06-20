@@ -1,0 +1,24 @@
+{
+  "name": "gitlab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prelink:local": "npm run build",
+    "dev": "npm run watch",
+    "link:local": "npm link",
+    "unlink:local": "npm unlink -g gitlab"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

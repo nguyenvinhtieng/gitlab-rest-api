@@ -1,1 +1,1 @@
-export const DEFAULT_API_PREFIX = "/api/v4";
+export { API_VERSION, DEFAULT_API_PREFIX } from "./api.constant";

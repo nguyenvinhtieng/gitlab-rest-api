@@ -1,3 +1,4 @@
+import { CONTENT_TYPE } from "../constants/content-type.constant";
 import { DEFAULT_API_PREFIX } from "../constants/common.constant";
 import { HTTP_METHOD } from "../constants/http-method.constant";
 import type { GitlabConfig, RequestOptions } from "../types/gitlab.types";
@@ -19,7 +20,7 @@ export class Gitlab {
     this.apiPrefix = config.apiPrefix ?? DEFAULT_API_PREFIX;
 
     this.defaultHeaders = {
-      Accept: "application/json",
+      Accept: CONTENT_TYPE.JSON,
       ...config.headers,
       ...buildAuthHeaders(config),
     };

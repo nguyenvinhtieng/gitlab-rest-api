@@ -1,3 +1,4 @@
+import { CONTENT_TYPE } from "../constants/content-type.constant";
 import { HTTP_METHOD, type HttpMethod } from "../constants/http-method.constant";
 
 export class GitlabApiError extends Error {
@@ -68,7 +69,7 @@ export async function request<T = unknown>(
 ): Promise<T> {
   const method: HttpMethod = options.method ?? HTTP_METHOD.GET;
   const headers: Record<string, string> = {
-    Accept: "application/json",
+    Accept: CONTENT_TYPE.JSON,
     ...options.headers,
   };
 
@@ -81,7 +82,7 @@ export async function request<T = unknown>(
     if (typeof options.body === "string") {
       init.body = options.body;
     } else {
-      headers["Content-Type"] = headers["Content-Type"] ?? "application/json";
+      headers["Content-Type"] = headers["Content-Type"] ?? CONTENT_TYPE.JSON;
       init.body = JSON.stringify(options.body);
     }
   }
